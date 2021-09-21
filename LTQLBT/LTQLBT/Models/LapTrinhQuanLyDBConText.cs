@@ -13,7 +13,10 @@ namespace LTQLBT.Models
         }
 
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
+        public virtual DbSet<person> persons { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
+       
         {
             modelBuilder.Entity<KhachHang>()
               .Property(e => e.SodienThoai)
