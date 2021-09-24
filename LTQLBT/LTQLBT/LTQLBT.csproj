@@ -148,6 +148,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\generatekey.cs" />
     <Compile Include="Models\KhachHang.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBConText.cs" />
     <Compile Include="Models\person.cs" />

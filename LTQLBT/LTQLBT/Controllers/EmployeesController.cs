@@ -13,6 +13,7 @@ namespace LTQLBT.Controllers
     public class EmployeesController : Controller
     {
         private LapTrinhQuanLyDBConText db = new LapTrinhQuanLyDBConText();
+        generatekey strPro = new generatekey();
 
         // GET: Employees
         public ActionResult Index()
@@ -38,6 +39,23 @@ namespace LTQLBT.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
+            string newID = "";
+            //tra ve danh sach Employee co sap xep theo PersonID
+            var emp = db.Employees.ToList().OrderByDescending(m => m.personID);
+            //kiem tra xem Employee da co du lieu chu
+            //neu chua co du lieu thi tra ve ma la PERS0001
+            if (emp.Count() == 0)
+            {
+                newID = "PERS0001";
+            }
+            //neu da co du lieu
+            else
+            {
+                newID = strPro.AutoGeneratekey(emp.FirstOrDefault().personID);
+            }
+            ViewBag.newPerID = newID;
+            return View();
+
             return View();
         }
 
