@@ -5,9 +5,7 @@ using System.Web;
 
 namespace LTQLBT.Models
 {
-    public class person
+    public class Person
     {
-        public string personID { get; set; }
-        public string personName { get; set; }
     }
 }
